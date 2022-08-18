@@ -103,8 +103,10 @@
       } // end main()
 
 
-      function load_modelBySKU(){
-        const sku = prompt('Please enter a glasses model SKU:', 'rayban_wayfarer_havane_marron');
+      function load_modelBySKU(e){
+        // alert(e.value)
+        // const sku = prompt('Please enter a glasses model SKU:', 'rayban_wayfarer_havane_marron');
+        const sku = e.value;
         if (sku){
           JEELIZVTOWIDGET.load(sku);
         }
@@ -150,7 +152,21 @@
 
         <!-- CHANGE MODEL BUTTONS: -->
         <div class='JeelizVTOWidgetControls' id='JeelizVTOWidgetChangeModelContainer'>
-          <button onclick="load_modelBySKU()">Selecionar Modelo</button>
+          <select name="cars" id="cars" onChange="load_modelBySKU(this)">
+            <option value="">Selecionar Modelo</option>
+            <option value="rayban_round_gun_vert">rayban_round_gun_vert</option>
+            <option value="rayban_clubround_noir_cuivre_flash">rayban_clubround_noir_cuivre_flash</option>
+            <option value="carrera_113S_gold_brown_gradient">carrera_113S_gold_brown_gradient</option>
+            <option value="carrera_5029_havana_blue">carrera_5029_havana_blue</option>
+            <option value="carrera_5003_bleu_gris_flash">carrera_5003_bleu_gris_flash</option>
+            <option value="catalyst_black_red">catalyst_black_red</option>
+            <option value="oakley_radar_path_black_orange">oakley_radar_path_black_orange</option>
+            <option value="prada_black_gold">prada_black_gold</option>
+            <option value="gucci_black_havana">gucci_black_havana</option>
+            <option value="polaroid_6009_black_gold">polaroid_6009_black_gold</option>
+            <option value="marshal_bronzecuivre_rosedegrade">marshal_bronzecuivre_rosedegrade</option>
+
+          </select>
         </div>
 
         <!-- BEGIN ADJUST NOTICE -->
